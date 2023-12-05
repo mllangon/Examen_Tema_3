@@ -1,21 +1,17 @@
+#include <iostream>
 #include <map>
 #include <string>
 #include <stdexcept>
+#include <variant>
 
-class Variant{
+class Environment {
 public:
-    Variant(int intValue) : value(intValue) {}
-    Variant(double doubleValue) : value(doubleValue) {}
-    Variant(const std::string& stringValue) : value(stringValue) {}
+    Environment() = default;
 
-    bool isInt() const { return std::holds_alternative<int>(value); }
-    bool isDouble() const { return std::holds_alternative<double>(value); }
-    bool isString() const { return std::holds_alternative<std::string>(value); }
+    Environment(const Environment&) = delete;
+    Environment& operator=(const Environment&) = delete;
 
-    int asInt() const {
-        if (!isInt()) throw std::runtime_error("No es un int");
-        return std::get<int>(value);
+    void setVariable(const std::string& name, const std::variant<int, double, std::string>& value) {
+        symbols[name] = value;
     }
 
-
-};
