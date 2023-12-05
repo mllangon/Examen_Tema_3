@@ -15,3 +15,18 @@ public:
         symbols[name] = value;
     }
 
+    template<typename T>
+    T getVariable(const std::string& name) const {
+        auto it = symbols.find(name);
+        if (it != symbols.end()) {
+            try {
+                return std::get<T>(it->second);
+            } catch (const std::bad_variant_access&) {
+                throw std::runtime_error("Tipo de variable incorrecto para " + name);
+            }
+        } else {
+            throw std::runtime_error("Variable no encontrada: " + name);
+        }
+    }
+
+}
