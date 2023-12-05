@@ -43,7 +43,7 @@ int main() {
 
     try {
         std::cout << "Vida del Jugador: " << gameEnvironment.getVariable<int>("vidaJugador") << std::endl;
-        std::cout << "Puntuación: " << gameEnvironment.getVariable<int>("puntuacion") << std::endl;
+        std::cout << "Puntuacion: " << gameEnvironment.getVariable<int>("puntuacion") << std::endl;
         std::cout << "Nombre del Nivel: " << gameEnvironment.getVariable<std::string>("nombreNivel") << std::endl;
     } catch (const std::runtime_error& e) {
         std::cerr << "Error: " << e.what() << std::endl;
