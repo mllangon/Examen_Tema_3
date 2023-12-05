@@ -50,3 +50,12 @@ int main() {
     } catch (const std::runtime_error& e) {
         std::cerr << "Error en el juego: " << e.what() << std::endl;
     }
+
+    try {
+        std::cout << "Puntuacion: " << std::get<int>(gameEnv.getVariable("score")) << std::endl; // Variable no definida
+    } catch (const std::runtime_error& e) {
+        std::cerr << "Error en el juego: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
