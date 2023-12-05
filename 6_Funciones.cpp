@@ -72,3 +72,22 @@ private:
     std::map<std::string, std::pair<Value, bool>> symbols;
 };
 
+int main() {
+    Environment gameEnv;
+
+    gameEnv.setVariable("playerHealth", 100);
+    gameEnv.setVariable("playerName", std::string("Mario"));
+    gameEnv.setVariable("maxHealth", 200, true);
+
+    std::cout << "Salud del Jugador: " << gameEnv.getVariableAs<int>("playerHealth") << std::endl;
+    std::cout << "Nombre del Jugador: " << gameEnv.getVariableAs<std::string>("playerName") << std::endl;
+
+    std::string varName = "maxHealth";
+    std::cout << "Es '" << varName << "' de solo lectura? " << gameEnv.isVariableReadOnly(varName) << std::endl;
+
+    try {
+        gameEnv.setVariable("maxHealth", 250);
+    } catch (const std::runtime_error& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
