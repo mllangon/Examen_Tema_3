@@ -26,3 +26,15 @@ public:
         }
     }
 
+private:
+    std::map<std::string, Value> symbols;
+};
+
+void printVariable(const std::optional<Environment::Value>& value, const std::string& name) {
+    if (value) {
+        std::visit([&name](const auto& v) { std::cout << "Valor de '" << name << "': " << v << std::endl; }, *value);
+    } else {
+        std::cout << "La variable '" << name << "' no existe." << std::endl;
+    }
+}
+
