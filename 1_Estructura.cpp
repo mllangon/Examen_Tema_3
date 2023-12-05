@@ -29,4 +29,15 @@ public:
         }
     }
 
-}
+private:
+    std::map<std::string, std::variant<int, double, std::string>> symbols;
+};
+
+int main() {
+    Environment gameEnvironment;
+
+
+    gameEnvironment.setVariable("vidaJugador", 100);
+    gameEnvironment.setVariable("puntuacion", 0);
+    gameEnvironment.setVariable("nombreNivel", std::string("Bosque Encantado"));
+
