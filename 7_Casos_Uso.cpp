@@ -42,15 +42,15 @@ private:
 int main() {
     Environment gameEnv;
 
-    gameEnv.setVariable("gameDifficulty", std::string("Normal"));
+    gameEnv.setVariable("Dificultad", std::string("Normal"));
 
-    gameEnv.setVariable("playerHealth", 100);
+    gameEnv.setVariable("Salud", 100);
 
-    gameEnv.setVariable("scoreToWin", 5000);
+    gameEnv.setVariable("Puntos", 5000);
 
-    std::cout << "Dificultad del Juego: " << gameEnv.getVariableAs<std::string>("gameDifficulty") << std::endl;
-    std::cout << "Salud del Jugador: " << gameEnv.getVariableAs<int>("playerHealth") << std::endl;
-    std::cout << "Puntaje Objetivo: " << gameEnv.getVariableAs<int>("scoreToWin") << std::endl;
+    std::cout << "Dificultad del Juego: " << gameEnv.getVariableAs<std::string>("Dificultad") << std::endl;
+    std::cout << "Salud del Jugador: " << gameEnv.getVariableAs<int>("Salud") << std::endl;
+    std::cout << "Puntaje Objetivo: " << gameEnv.getVariableAs<int>("Puntos") << std::endl;
 
     return 0;
 }
