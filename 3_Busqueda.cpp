@@ -38,3 +38,14 @@ void printVariable(const std::optional<Environment::Value>& value, const std::st
     }
 }
 
+int main() {
+    Environment env;
+    env.setVariable("testInt", 42);
+    env.setVariable("testString", std::string("Hello"));
+
+    printVariable(env.lookup("testInt"), "testInt");
+
+    printVariable(env.lookup("nonExistent"), "nonExistent");
+
+    return 0;
+}
