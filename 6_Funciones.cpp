@@ -42,3 +42,21 @@ public:
             symbols.erase(it);
         }
     }
+
+    bool hasVariable(const std::string& name) const {
+        return symbols.find(name) != symbols.end();
+    }
+
+    std::string isVariableReadOnly(const std::string& name) const {
+        auto it = symbols.find(name);
+        if (it != symbols.end()) {
+            return (it->second.second) ? "Sí" : "No";
+        } else {
+            throw std::runtime_error("Variable del juego '" + name + "' no encontrada");
+        }
+    }
+
+    void clearEnvironment() {
+        symbols.clear();
+    }
+
