@@ -55,3 +55,18 @@ int main() {
     Variant::Value valueY = myEnvironment.getSymbolValue("y");
     Variant::Value valueName = myEnvironment.getSymbolValue("nombre");
 
+    Variant variantX(valueX);
+    Variant variantY(valueY);
+    Variant variantName(valueName);
+
+    std::cout << "Valor de x: ";
+    variantX.printValue();
+
+    std::cout << "Valor de y: ";
+    variantY.printValue();
+
+    std::cout << "Valor de nombre: ";
+    variantName.printValue();
+
+    return 0;
+}
