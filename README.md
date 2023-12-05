@@ -2,7 +2,7 @@
 -----------------------------------------------------------
 Mario Llansó --> https://github.com/mllangon/Examen_Tema_3.git
 -----------------------------------------------------------
-#Preguntas de Múltiple Respuesta:
+# Preguntas de Múltiple Respuesta:
 
 -1)--> b = Representar cualquier tipo de dato Lisp
 
@@ -13,7 +13,7 @@ Mario Llansó --> https://github.com/mllangon/Examen_Tema_3.git
 -4)--> a =  Convierte una cadena JSON en un objeto Variant
 
 -----------------------------------------------------------
-#Explicacion del Código:
+# Explicacion del Código:
 
 1: He creado una clase enviroment que luego devuelve en un main datos de un jugador en el ambito del videojuego.
 2: Repitiendo la clase enviroment  instero unos simbolos que luego busca en el main si se han insetrado o no.
