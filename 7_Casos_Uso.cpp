@@ -39,3 +39,18 @@ private:
     std::map<std::string, std::pair<Value, bool>> symbols;
 };
 
+int main() {
+    Environment gameEnv;
+
+    gameEnv.setVariable("gameDifficulty", std::string("Normal"));
+
+    gameEnv.setVariable("playerHealth", 100);
+
+    gameEnv.setVariable("scoreToWin", 5000);
+
+    std::cout << "Dificultad del Juego: " << gameEnv.getVariableAs<std::string>("gameDifficulty") << std::endl;
+    std::cout << "Salud del Jugador: " << gameEnv.getVariableAs<int>("playerHealth") << std::endl;
+    std::cout << "Puntaje Objetivo: " << gameEnv.getVariableAs<int>("scoreToWin") << std::endl;
+
+    return 0;
+}
