@@ -33,3 +33,20 @@ public:
             throw std::runtime_error("Variable no encontrada: " + name);
         }
     }
+
+private:
+    std::map<std::string, std::variant<int, double, std::string>> symbols;
+};
+
+int main() {
+    Environment gameEnvironment;
+
+
+    bool inserted = gameEnvironment.insert("vidaJugador", 100);
+    std::cout << "'vidaJugador' fue insertado? " << (inserted ? "Si" : "No") << std::endl;
+
+
+    inserted = gameEnvironment.insert("vidaJugador", 150);
+    std::cout << "Intento de reinsertar 'vidaJugador'? " << (inserted ? "Si" : "No") << std::endl;
+
+
