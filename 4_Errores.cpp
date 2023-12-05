@@ -31,7 +31,7 @@ public:
     }
 
 private:
-    std::map<std::string, std::pair<Value, bool>> symbols; // El booleano indica si es de solo lectura
+    std::map<std::string, std::pair<Value, bool>> symbols;
 };
 
 int main() {
@@ -39,11 +39,10 @@ int main() {
 
     try {
 
-        gameEnv.setVariable("maxHealth", 100, true); // Constante del juego
-        gameEnv.setVariable("playerHealth", 100);   // Variable del juego
-        gameEnv.setVariable("playerName", std::string("Hero")); // Nombre del jugador
-        gameEnv.setVariable("maxHealth", 150); // Intento fallido de modificar una constante
-
+        gameEnv.setVariable("maxHealth", 100, true);
+        gameEnv.setVariable("playerHealth", 100);
+        gameEnv.setVariable("playerName", std::string("Hero"));
+        gameEnv.setVariable("maxHealth", 150);
         std::cout << "Salud Máxima: " << std::get<int>(gameEnv.getVariable("maxHealth")) << std::endl;
         std::cout << "Salud del Jugador: " << std::get<int>(gameEnv.getVariable("playerHealth")) << std::endl;
         std::cout << "Nombre del Jugador: " << std::get<std::string>(gameEnv.getVariable("playerName")) << std::endl;
@@ -52,7 +51,7 @@ int main() {
     }
 
     try {
-        std::cout << "Puntuacion: " << std::get<int>(gameEnv.getVariable("score")) << std::endl; // Variable no definida
+        std::cout << "Puntuacion: " << std::get<int>(gameEnv.getVariable("score")) << std::endl;
     } catch (const std::runtime_error& e) {
         std::cerr << "Error en el juego: " << e.what() << std::endl;
     }
