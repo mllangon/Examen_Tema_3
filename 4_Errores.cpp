@@ -18,7 +18,7 @@ public:
         if (!success && iter->second.second) {
             throw std::runtime_error("No se puede modificar la constante del juego '" + name + "'");
         } else if (!success) {
-            iter->second.first = value; // Actualiza el valor si no es de solo lectura
+            iter->second.first = value;
         }
     }
 
