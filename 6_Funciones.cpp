@@ -91,3 +91,24 @@ int main() {
         std::cerr << "Error: " << e.what() << std::endl;
     }
 
+    gameEnv.removeVariable("playerName");
+
+    std::string deletedVarName = "playerName";
+    std::cout << "Existe '" << deletedVarName << "' en el entorno? " << (gameEnv.hasVariable(deletedVarName) ? "Sí" : "No") << std::endl;
+
+    std::cout << "Variables en el entorno:" << std::endl;
+    std::vector<std::string> variableList = gameEnv.getAllVariables();
+    if (variableList.empty()) {
+        std::cout << "No hay variables en el entorno." << std::endl;
+    } else {
+        for (const auto& var : variableList) {
+            std::cout << "- " << var << std::endl;
+        }
+    }
+
+    gameEnv.clearEnvironment();
+
+    std::cout << "El entorno esta vacio? " << (gameEnv.getAllVariables().empty() ? "Si" : "No") << std::endl;
+
+    return 0;
+}
