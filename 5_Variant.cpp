@@ -40,3 +40,18 @@ public:
         }
     }
 
+private:
+    std::map<std::string, Variant::Value> symbolTable;
+};
+
+int main() {
+    Environment myEnvironment;
+
+    myEnvironment.addSymbol("x", 10);
+    myEnvironment.addSymbol("y", 3.14);
+    myEnvironment.addSymbol("nombre", "Mario");
+
+    Variant::Value valueX = myEnvironment.getSymbolValue("x");
+    Variant::Value valueY = myEnvironment.getSymbolValue("y");
+    Variant::Value valueName = myEnvironment.getSymbolValue("nombre");
+
