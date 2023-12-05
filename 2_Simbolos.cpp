@@ -50,3 +50,11 @@ int main() {
     std::cout << "Intento de reinsertar 'vidaJugador'? " << (inserted ? "Si" : "No") << std::endl;
 
 
+    try {
+        std::cout << "Vida del Jugador: " << gameEnvironment.getVariable<int>("vidaJugador") << std::endl;
+    } catch (const std::runtime_error& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
