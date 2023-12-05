@@ -60,3 +60,15 @@ public:
         symbols.clear();
     }
 
+    std::vector<std::string> getAllVariables() const {
+        std::vector<std::string> variableList;
+        for (const auto& pair : symbols) {
+            variableList.push_back(pair.first);
+        }
+        return variableList;
+    }
+
+private:
+    std::map<std::string, std::pair<Value, bool>> symbols;
+};
+
